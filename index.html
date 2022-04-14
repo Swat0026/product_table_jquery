@@ -135,7 +135,21 @@
         $(document).on("click", ".del" , function(){
           $(this).parents("tr").remove()
         });
+        $(document).on("click",".edit",function(){
+          var id=this.id;
+          console.log(id);
+          var data=items[id];
+          $("#hiddenid").val(`${id}`);
+          $("#product_sku").val(`${data.sku1}`)
+          $("#product_name").val(`${data.name1}`)
+          $("#product_price").val(`${data.price1}`)
+          $("#product_quantity").val(`${data.quantity1}`)
+          $("#update_product").fadeIn()
+          $("#add_product").fadeOut()
+  
+        });
         
+
     </script>
   </body>
 </html>
