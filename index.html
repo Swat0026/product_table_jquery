@@ -132,8 +132,10 @@
           });$("#product_list").html(html+html1+"</table>")
         }
 
-       
-
+        $(document).on("click", ".del" , function(){
+          $(this).parents("tr").remove()
+        });
+        
     </script>
   </body>
 </html>
