@@ -148,7 +148,24 @@
           $("#add_product").fadeOut()
   
         });
-        
+        $("#update_product").on("click",function(){
+          var id= $("#hiddenid").val();
+          var info1=items[id];
+
+          console.log(info1);
+          info1.sku1=$("#product_sku").val();
+          info1.name1=$("#product_name").val();
+          info1.price1=$("#product_price").val();
+          info1.quantity1=$("#product_quantity").val();
+
+          display();
+          $("#update_product").fadeOut()
+          $("#add_product").fadeIn()
+          
+
+
+
+        })
 
     </script>
   </body>
