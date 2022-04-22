@@ -84,6 +84,7 @@
       </div>
     </div>
     <script>
+     
       $("#update_product").hide();
       var items = [];
       $("#add_product").on("click", function () {
@@ -91,15 +92,29 @@
         var name = $("#product_name").val();
         var price = $("#product_price").val();
         var quantity = $("#product_quantity").val();
-        var itemscart = {
+        if(sku=="" || name==""||price==""||quantity==""){
+          alert("Please fill all the fields")
+          
+        }else{
+
+          var itemscart = {
           sku1: sku,
           name1: name,
           price1: price,
           quantity1: quantity,
-        };
-        items.push(itemscart);
+        };items.push(itemscart);
+        $(".success").show();
+        setTimeout(()=>{$(".success").hide();},2000)
         console.log(items);
         display();
+
+        }
+
+
+
+
+       
+        
       });
       var html = `<table>
         <tr>
